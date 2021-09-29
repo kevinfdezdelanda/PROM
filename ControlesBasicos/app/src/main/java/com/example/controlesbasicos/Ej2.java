@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ej2 extends AppCompatActivity {
+public class Ej2 extends AppCompatActivity {
 
     private EditText valor1, valor2;
     private TextView resultado;

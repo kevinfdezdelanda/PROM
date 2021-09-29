@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DFDFDF">
+
+    <ImageView
+        android:id="@+id/imgL2"
+        android:layout_width="59dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgC2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bombilla_apagada" />
+
+    <ImageView
+        android:id="@+id/imgC2"
+        android:layout_width="59dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgL1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/camara" />
+
+    <Switch
+        android:id="@+id/camaras"
+        android:onClick="accion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:checked="true"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="70dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="36dp"
+        android:text="Camara1 :"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="70dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="24dp"
+        android:text="Luz1: "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Switch
+        android:id="@+id/luces"
+        android:onClick="accion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/camaras" />
+
+    <ToggleButton
+        android:id="@+id/camara2"
+        android:onClick="accion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="204dp"
+        android:checked="true"
+        android:text="ToggleButton"
+        android:textOff="No"
+        android:textOn="Sí"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/luces" />
+
+    <ToggleButton
+        android:id="@+id/luz2"
+        android:onClick="accion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="204dp"
+        android:text="ToggleButton"
+        android:textOff="No"
+        android:textOn="Sí"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/camara2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Camara2:"
+        app:layout_constraintEnd_toStartOf="@+id/camara2"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Luz2:"
+        app:layout_constraintEnd_toStartOf="@+id/luz2"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <ImageView
+        android:id="@+id/imgC1"
+        android:layout_width="59dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/camara" />
+
+    <ImageView
+        android:id="@+id/imgL1"
+        android:layout_width="59dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imgC1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bombilla_apagada" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
