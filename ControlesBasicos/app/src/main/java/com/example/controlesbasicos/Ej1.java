@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class Ej1 extends AppCompatActivity {
 
     private EditText valor1, valor2;
     private TextView resultado;
@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.ej1);
 
         resultado = (TextView) findViewById(R.id.resultado);
         valor1 = (EditText) findViewById(R.id.txtvalor1);

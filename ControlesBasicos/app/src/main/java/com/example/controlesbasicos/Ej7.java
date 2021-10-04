@@ -1,5 +1,6 @@
 package com.example.controlesbasicos;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -38,6 +39,29 @@ public class Ej7 extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
                 int progreso = persianas.getProgress();
                 p.setProgress(progreso);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+        temperatura.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+                int progreso = temperatura.getProgress();
+                if(progreso<127){
+                    t.setBackgroundColor(Color.rgb(0+progreso*2, 0+progreso*2, 255-progreso*2));
+                    //t.setBackgroundColor(Color.rgb(126,126,126));
+                }else{
+                    t.setBackgroundColor(Color.rgb(0+progreso, 255-progreso*2, 255-progreso));
+                }
             }
 
             @Override
