@@ -26,24 +26,28 @@
             android:id="@+id/a02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="cambiarActividad"
             android:text="Actividad 02" />
 
         <Button
             android:id="@+id/a03"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="cambiarActividad"
             android:text="Actividad 03" />
 
         <Button
             android:id="@+id/a04"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="cambiarActividad"
             android:text="Actividad 04" />
 
         <Button
-            android:id="@+id/salir"
+            android:id="@+id/volverEj01"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="cambiarActividad"
             android:text="SALIR" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

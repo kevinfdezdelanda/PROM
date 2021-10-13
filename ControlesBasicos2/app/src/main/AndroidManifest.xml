@@ -18,6 +18,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Ej01"
+            android:exported="true"
+            android:label="Nombre y apellidos">
+        </activity>
+        <activity
+            android:name=".Ej01_2"
+            android:exported="true"
+            android:label="Aceptar condiciones">
+        </activity>
+        <activity
+            android:name=".Ej02"
+            android:exported="true"
+            android:label="Calculadora simple">
+        </activity>
+        <activity
+            android:name=".Ej02_2"
+            android:exported="true"
+            android:label="Resultado operacion">
+        </activity>
+        <activity
+            android:name=".Ej03"
+            android:exported="true"
+            android:label="Resultado operacion">
+        </activity>
     </application>
 
 </manifest>

@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,12 +20,22 @@ public class MainActivity extends AppCompatActivity {
         a02 = (Button) findViewById(R.id.a02);
         a03 = (Button) findViewById(R.id.a03);
         a04 = (Button) findViewById(R.id.a04);
-        salir = (Button) findViewById(R.id.salir);
+        salir = (Button) findViewById(R.id.volverEj01);
     }
 
     public void cambiarActividad(View v){
         if(v.equals(a01)){
             Intent intent = new Intent(MainActivity.this, Ej01.class);
+            startActivity(intent);
+        }
+
+        if(v.equals(a02)){
+            Intent intent = new Intent(MainActivity.this, Ej02.class);
+            startActivity(intent);
+        }
+
+        if(v.equals(a03)){
+            Intent intent = new Intent(MainActivity.this, Ej03.class);
             startActivity(intent);
         }
     }
