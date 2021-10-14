@@ -17,6 +17,7 @@ public class Ej03 extends AppCompatActivity {
     private RadioButton masculino, femenino;
     private CheckBox musica, lectura, deporte, viajar;
     private Button enviar;
+    private TextView txtError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class Ej03 extends AppCompatActivity {
         lectura = (CheckBox) findViewById(R.id.lectura);
         deporte = (CheckBox) findViewById(R.id.deportes);
         viajar = (CheckBox) findViewById(R.id.viajar);
+        txtError = (TextView) findViewById(R.id.error);
 
         enviar = (Button) findViewById(R.id.enviar);
     }
@@ -41,9 +43,38 @@ public class Ej03 extends AppCompatActivity {
         if(v.equals(enviar)){
             String error = comprobar();
             if(error.equals("")){
+                txtError.setText("");
+                Intent intent = new Intent(Ej03.this, Ej03_2.class);
+                intent.putExtra("nombre", String.valueOf(nombre.getText()));
+                intent.putExtra("apellido", String.valueOf(apellidos.getText()));
+                if(masculino.isChecked()){
+                    intent.putExtra("sexo", "masculino");
+                }else{
+                    intent.putExtra("sexo", "femenino");
+                }
+                String aficiones = "";
 
+                if(musica.isChecked()){
+                    aficiones += "musica ";
+                }
+
+                if(lectura.isChecked()){
+                    aficiones += "lectura ";
+                }
+
+                if(deporte.isChecked()){
+                    aficiones += "deporte ";
+                }
+
+                if(viajar.isChecked()){
+                    aficiones += "viajar ";
+                }
+
+                intent.putExtra("aficiones", aficiones);
+
+                startActivity(intent);
             }else{
-
+                txtError.setText(error);
             }
         }
 

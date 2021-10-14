@@ -43,6 +43,21 @@
             android:exported="true"
             android:label="Resultado operacion">
         </activity>
+        <activity
+            android:name=".Ej03_2"
+            android:exported="true"
+            android:label="Resultado operacion">
+        </activity>
+        <activity
+            android:name=".Ej04"
+            android:exported="true"
+            android:label="Resultado operacion">
+        </activity>
+        <activity
+            android:name=".Ej04_2"
+            android:exported="true"
+            android:label="Resultado operacion">
+        </activity>
     </application>
 
 </manifest>

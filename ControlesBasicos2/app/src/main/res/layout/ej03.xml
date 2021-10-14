@@ -121,6 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="enviar"
+        android:onClick="enviar"
         app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/viajar" />
 
@@ -150,6 +151,16 @@
             app:layout_constraintStart_toStartOf="@+id/masculino"
             app:layout_constraintTop_toBottomOf="@+id/masculino" />
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#FF0303"
+        app:layout_constraintStart_toEndOf="@+id/enviar"
+        app:layout_constraintTop_toTopOf="@+id/enviar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
