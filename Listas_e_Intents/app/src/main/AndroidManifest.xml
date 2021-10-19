@@ -28,6 +28,11 @@
             android:exported="true"
             android:label="Paises">
         </activity>
+        <activity
+            android:name=".Ej03"
+            android:exported="true"
+            android:label="Paises">
+        </activity>
     </application>
 
 </manifest>

@@ -11,13 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-class AdaptadorWebs extends ArrayAdapter<Web> {
+class AdaptadorContactos extends ArrayAdapter<Contacto> {
 
-    private Web[] webs;
+    private Contacto[] contactos;
 
-    public AdaptadorWebs(@NonNull Context context, Web[] webs) {
-        super(context, R.layout.webs_layout, webs);
-        this.webs = webs;
+    public AdaptadorContactos(@NonNull Context context, Contacto[] contactos) {
+        super(context, R.layout.contactos_layout, contactos);
+        this.contactos = contactos;
     }
 
     @NonNull
@@ -26,15 +26,19 @@ class AdaptadorWebs extends ArrayAdapter<Web> {
                         @NonNull ViewGroup parent) {
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        View item = inflater.inflate(R.layout.webs_layout, null);
+        View item = inflater.inflate(R.layout.contactos_layout, null);
         TextView nombre = (TextView)item.findViewById(R.id.nombre);
-        nombre.setText(webs[position].getNombre());
-        TextView url = (TextView)item.findViewById(R.id.contacto);
-        url.setText(webs[position].getUrl());
-        TextView id = (TextView)item.findViewById(R.id.id);
-        id.setText(webs[position].getId());
+        nombre.setText(contactos[position].getNombre());
+        TextView contacto = (TextView)item.findViewById(R.id.contacto);
+        contacto.setText(contactos[position].getCorreo_telf());
+
         ImageView img = (ImageView)item.findViewById(R.id.img03);
-        img.setImageDrawable(webs[position].getImagen().getDrawable());
+        if(contactos[position].isEsCorreo()){
+            img.setImageResource(R.drawable.correo);
+        }else{
+            img.setImageResource(R.drawable.telefono);
+        }
+
         return (item);
     }
 }

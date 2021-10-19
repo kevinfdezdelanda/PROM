@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(v.equals(a03)){
-            //Intent intent = new Intent(MainActivity.this, Ej03.class);
-            //startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, Ej03.class);
+            startActivity(intent);
         }
     }
 }

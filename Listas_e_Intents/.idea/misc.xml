@@ -5,8 +5,12 @@
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main_2.xml" value="0.13196555217831812" />
+        <entry key="app/src/main/res/layout/contactos_layout.xml" value="0.5" />
         <entry key="app/src/main/res/layout/ej01.xml" value="0.25" />
         <entry key="app/src/main/res/layout/ej02.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/ej03.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/ej03_1.xml" value="0.13196555217831812" />
+        <entry key="app/src/main/res/layout/ej03_2.xml" value="0.22" />
         <entry key="app/src/main/res/layout/webs_layout.xml" value="0.33" />
       </map>
     </option>
