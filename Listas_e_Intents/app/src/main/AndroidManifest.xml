@@ -26,12 +26,17 @@
         <activity
             android:name=".Ej02"
             android:exported="true"
-            android:label="Paises">
+            android:label="Webs">
         </activity>
         <activity
             android:name=".Ej03"
             android:exported="true"
-            android:label="Paises">
+            android:label="Contactos">
+        </activity>
+        <activity
+            android:name=".Ej03_2"
+            android:exported="true"
+            android:label="Nuevo contacto">
         </activity>
     </application>
 

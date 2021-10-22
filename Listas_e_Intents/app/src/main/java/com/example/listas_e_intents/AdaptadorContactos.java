@@ -11,11 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+
 class AdaptadorContactos extends ArrayAdapter<Contacto> {
 
-    private Contacto[] contactos;
+    private ArrayList<Contacto> contactos;
 
-    public AdaptadorContactos(@NonNull Context context, Contacto[] contactos) {
+    public AdaptadorContactos(@NonNull Context context, ArrayList<Contacto> contactos) {
         super(context, R.layout.contactos_layout, contactos);
         this.contactos = contactos;
     }
@@ -28,12 +30,12 @@ class AdaptadorContactos extends ArrayAdapter<Contacto> {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.contactos_layout, null);
         TextView nombre = (TextView)item.findViewById(R.id.nombre);
-        nombre.setText(contactos[position].getNombre());
+        nombre.setText(contactos.get(position).getNombre());
         TextView contacto = (TextView)item.findViewById(R.id.contacto);
-        contacto.setText(contactos[position].getCorreo_telf());
+        contacto.setText(contactos.get(position).getCorreo_telf());
 
         ImageView img = (ImageView)item.findViewById(R.id.img03);
-        if(contactos[position].isEsCorreo()){
+        if(contactos.get(position).isEsCorreo()){
             img.setImageResource(R.drawable.correo);
         }else{
             img.setImageResource(R.drawable.telefono);

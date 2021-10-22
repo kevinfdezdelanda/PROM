@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/tipo"
         android:layout_width="239dp"
         android:layout_height="48dp"
         android:layout_marginStart="56dp"
@@ -63,7 +63,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/nombreCont2"
+        android:id="@+id/correoTelf"
         android:layout_width="243dp"
         android:layout_height="50dp"
         android:layout_marginStart="4dp"
@@ -91,7 +91,19 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
         android:text="Crear"
+        android:onClick="crearCont"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/error03"
+        android:layout_width="42dp"
+        android:layout_height="14dp"
+        android:layout_marginBottom="40dp"
+        android:textColor="#FF0101"
+        app:layout_constraintBottom_toTopOf="@+id/crearContacto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
