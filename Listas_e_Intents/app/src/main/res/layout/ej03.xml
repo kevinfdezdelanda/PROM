@@ -28,7 +28,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/nuevo"
+        android:id="@+id/nuevoCont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"

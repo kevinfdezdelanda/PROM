@@ -16,8 +16,8 @@ import java.util.ArrayList;
 public class Ej03 extends AppCompatActivity {
 
     private ListView listContactos;
+    private ArrayList<Contacto> contactos;
     private Button nuevo;
-    ArrayList<Contacto> contactos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,21 +25,17 @@ public class Ej03 extends AppCompatActivity {
         setContentView(R.layout.ej03);
 
         listContactos = (ListView) findViewById(R.id.listContactos);
-        nuevo = (Button) findViewById(R.id.nuevo);
+        nuevo = (Button) findViewById(R.id.nuevoCont);
 
-        if(contactos==null) {
-            contactos = new ArrayList<>();
+        contactos = new ArrayList<>();
+        contactos.add(new Contacto("Juan Carlos", "juancar@gmail.com", true));
+        contactos.add(new Contacto("Juan Pablo", "juampa_rampa@gmail.com", true));
+        contactos.add(new Contacto("Antonia", "673 78 78 78", false));
+        contactos.add(new Contacto("Jose Juan", "jose_juan@jose_juan.jose_juan", true));
 
-            contactos.add(new Contacto("Juan Carlos", "juancar@gmail.com", true));
-            contactos.add(new Contacto("Juan Pablo", "juampa_rampa@gmail.com", true));
-            contactos.add(new Contacto("Antonia", "673 78 78 78", false));
-            contactos.add(new Contacto("Jose Juan", "jose_juan@jose_juan.jose_juan", true));
-
-
-            AdaptadorContactos adaptadorContactos =
-                    new AdaptadorContactos(this, contactos);
-            listContactos.setAdapter(adaptadorContactos);
-        }
+        AdaptadorContactos adaptadorContactos =
+                new AdaptadorContactos(this, contactos);
+        listContactos.setAdapter(adaptadorContactos);
 
         Bundle extras = getIntent().getExtras();
         if(extras!=null){
@@ -60,5 +56,10 @@ public class Ej03 extends AppCompatActivity {
         }
     }
 
+    public void nuevoCont(View v){
+        Intent intent = new Intent(Ej03.this, Ej03_2.class);
+        intent.putExtra("contactos", contactos);
+        startActivity(intent);
+    }
 
 }

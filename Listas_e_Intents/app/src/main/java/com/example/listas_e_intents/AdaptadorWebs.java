@@ -27,13 +27,13 @@ class AdaptadorWebs extends ArrayAdapter<Web> {
 
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.webs_layout, null);
-        TextView nombre = (TextView)item.findViewById(R.id.nombre);
+        TextView nombre = (TextView)item.findViewById(R.id.nombre2);
         nombre.setText(webs[position].getNombre());
-        TextView url = (TextView)item.findViewById(R.id.contacto);
+        TextView url = (TextView)item.findViewById(R.id.contacto2);
         url.setText(webs[position].getUrl());
         TextView id = (TextView)item.findViewById(R.id.id);
         id.setText(webs[position].getId());
-        ImageView img = (ImageView)item.findViewById(R.id.img03);
+        ImageView img = (ImageView)item.findViewById(R.id.img04);
         img.setImageDrawable(webs[position].getImagen().getDrawable());
         return (item);
     }

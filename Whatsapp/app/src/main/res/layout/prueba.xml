@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
+    android:layout_height="match_parent">
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".MainActivity">
-
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#078F64"
             app:tabGravity="fill"
-            app:tabIndicatorColor="@color/white"
-            app:tabTextColor="#FFFFFF"
-            tools:ignore="SpeakableTextPresentCheck" />
-
+            app:tabIndicatorColor="@color/black"/>
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:background="@android:color/darker_gray"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

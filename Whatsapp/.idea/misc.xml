@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/chats.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/contactos.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/content_main.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/llamadas.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/prueba.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/menu/menu_main.xml" value="0.36666666666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2767210144927536" />
         <entry key="app/src/main/res/layout/chats.xml" value="0.2767210144927536" />
         <entry key="app/src/main/res/layout/contactos.xml" value="0.2767210144927536" />

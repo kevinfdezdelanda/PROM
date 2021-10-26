@@ -18,27 +18,13 @@ import com.example.whatsapp.databinding.ActivityMainBinding;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class Prueba extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        setSupportActionBar(binding.toolbar);
-
-        binding.fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        setContentView(R.layout.prueba);
 
         //Asignamos al ViewPager el PageAdapter
         ViewPager viewPager = findViewById(R.id.viewpager);
@@ -47,14 +33,11 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout= findViewById(R.id.tabLayout);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setupWithViewPager(viewPager);
+
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+
 
     class PageAdaprter extends PagerAdapter {
         private LinearLayout chats;
@@ -79,14 +62,14 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     if (chats == null){
                         chats = (LinearLayout)
-                            LayoutInflater.from(MainActivity.this).inflate(R.layout.chats, container,false );
+                            LayoutInflater.from(Prueba.this).inflate(R.layout.chats, container,false );
                     }
                     page = chats;
                     break;
                 case 1:
                     if (contactos == null) {
                         contactos = (LinearLayout)
-                                LayoutInflater.from(MainActivity.this)
+                                LayoutInflater.from(Prueba.this)
                                         .inflate(R.layout.contactos,container,false);
                     }
                     page=contactos;
@@ -94,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 default:
                     if (llamadas == null) {
                         llamadas = (LinearLayout)
-                                LayoutInflater.from(MainActivity.this)
+                                LayoutInflater.from(Prueba.this)
                                         .inflate(R.layout.llamadas,container,false);
                     }
                     page=llamadas;

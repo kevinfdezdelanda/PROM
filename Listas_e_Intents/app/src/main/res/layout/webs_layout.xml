@@ -6,7 +6,7 @@
              android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/img03"
+        android:id="@+id/img04"
         android:layout_width="103dp"
         android:layout_height="85dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -14,25 +14,25 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/nombre"
+        android:id="@+id/nombre2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintStart_toEndOf="@+id/img03"
+        app:layout_constraintStart_toEndOf="@+id/img04"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/contacto"
+        android:id="@+id/contacto2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="10dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintStart_toEndOf="@+id/img03"
-        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+        app:layout_constraintStart_toEndOf="@+id/img04"
+        app:layout_constraintTop_toBottomOf="@+id/nombre2" />
 
     <TextView
         android:id="@+id/id"
@@ -41,6 +41,6 @@
         android:layout_marginStart="12dp"
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        app:layout_constraintStart_toEndOf="@+id/img03"
-        app:layout_constraintTop_toBottomOf="@+id/contacto" />
+        app:layout_constraintStart_toEndOf="@+id/img04"
+        app:layout_constraintTop_toBottomOf="@+id/contacto2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
