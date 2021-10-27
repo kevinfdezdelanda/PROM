@@ -9,9 +9,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView3"
+    <ListView
+        android:id="@+id/listLlamadas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="llamadas" />
+        android:layout_margin="15dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp"
+        tools:ignore="MissingConstraints" />
 </LinearLayout>

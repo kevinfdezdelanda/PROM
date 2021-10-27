@@ -1,11 +1,16 @@
 package com.example.whatsapp;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+    private ListView listChats, listLlamadas, listContactos;
+    private Contacto[] contactosArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +54,33 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout= findViewById(R.id.tabLayout);
         tabLayout.setTabMode(TabLayout.MODE_FIXED);
         tabLayout.setupWithViewPager(viewPager);
+
+        ImageView usu1Img = new ImageView(this);
+        usu1Img.setImageResource(R.drawable.usu1);
+
+        ImageView usu2Img = new ImageView(this);
+        usu2Img.setImageResource(R.drawable.usu2);
+
+        ImageView usu3Img = new ImageView(this);
+        usu3Img.setImageResource(R.drawable.usu3);
+
+        ImageView usu4Img = new ImageView(this);
+        usu4Img.setImageResource(R.drawable.usu4);
+
+        ImageView usu5Img = new ImageView(this);
+        usu5Img.setImageResource(R.drawable.usu5);
+
+        contactosArray = new Contacto[] {
+                new Contacto(usu1Img, "Carla", "Hola no me hables", "Ya he llegado", "Ayer", "07/06/2021", "video", 1 ),
+                new Contacto(usu2Img, "Maria", "...", "Si, tu?", "Hoy", "07/06/2021", "llamada", 2 ),
+                new Contacto(usu3Img, "Jose Antonio", "Nose que poner", "Holaaaaaaaa", "Hoy", "07/06/2021", "video", 31 ),
+                new Contacto(usu4Img, "Marcos", "asdasd", "KLK BRooooo", "Ayer", "07/06/2021", "video", 2 ),
+                new Contacto(usu5Img, "Juanito Juan", "pagame", "pagame lo que me debes moroso ultimo aviso", "Hoy", "07/06/2021", "video", 9 ),
+        };
+    }
+
+    public void insertatListaChats(Contacto[] contactos){
+
     }
 
     @Override
@@ -82,6 +116,11 @@ public class MainActivity extends AppCompatActivity {
                             LayoutInflater.from(MainActivity.this).inflate(R.layout.chats, container,false );
                     }
                     page = chats;
+                    listChats = (ListView) chats.findViewById(R.id.listChats);
+
+                    AdaptadorChats adaptadorChats =
+                            new AdaptadorChats(chats.getContext(), contactosArray);
+                    listChats.setAdapter(adaptadorChats);
                     break;
                 case 1:
                     if (contactos == null) {
@@ -98,6 +137,11 @@ public class MainActivity extends AppCompatActivity {
                                         .inflate(R.layout.llamadas,container,false);
                     }
                     page=llamadas;
+                    listLlamadas = (ListView) llamadas.findViewById(R.id.listLlamadas);
+
+                    AdaptadorLLamadas adaptadorLLamadas =
+                            new AdaptadorLLamadas(llamadas.getContext(), contactosArray);
+                    listLlamadas.setAdapter(adaptadorLLamadas);
                     break;
             }
             container.addView(page, 0);
