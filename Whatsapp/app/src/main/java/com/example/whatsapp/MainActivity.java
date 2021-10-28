@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
         usu5Img.setImageResource(R.drawable.usu5);
 
         contactosArray = new Contacto[] {
-                new Contacto(usu1Img, "Carla", "Hola no me hables", "Ya he llegado", "Ayer", "07/06/2021", "video", 1 ),
-                new Contacto(usu2Img, "Maria", "...", "Si, tu?", "Hoy", "07/06/2021", "llamada", 2 ),
-                new Contacto(usu3Img, "Jose Antonio", "Nose que poner", "Holaaaaaaaa", "Hoy", "07/06/2021", "video", 31 ),
-                new Contacto(usu4Img, "Marcos", "asdasd", "KLK BRooooo", "Ayer", "07/06/2021", "video", 2 ),
-                new Contacto(usu5Img, "Juanito Juan", "pagame", "pagame lo que me debes moroso ultimo aviso", "Hoy", "07/06/2021", "video", 9 ),
+                new Contacto(usu1Img, "Carla", "Hola no me hables", "Ya he llegado", "Ayer", "07/06/2021",  1 ),
+                new Contacto(usu2Img, "Maria", "...", "Si, tu?", "Hoy", "07/06/2021", 2 ),
+                new Contacto(usu3Img, "Jose Antonio", "Nose que poner", "Holaaaaaaaa", "Hoy", "07/06/2021",  31 ),
+                new Contacto(usu4Img, "Marcos", "asdasd", "KLK BRooooo", "Ayer", "07/06/2021",  2 ),
+                new Contacto(usu5Img, "Juanito Juan", "pagame", "pagame lo que me debes moroso ultimo aviso", "Hoy", "07/06/2021",  9 ),
         };
     }
 

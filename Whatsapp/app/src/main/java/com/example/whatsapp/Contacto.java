@@ -4,17 +4,16 @@ import android.widget.ImageView;
 
 public class Contacto {
     private ImageView imagen;
-    private String nombre, estado, ultMsg, fechaMsg, fechaLlamada, tipoUltimaLlamada;
+    private String nombre, estado, ultMsg, fechaMsg, fechaLlamada;
     private int numMsg;
 
-    public Contacto(ImageView imagen, String nombre, String estado, String ultMsg, String fechaMsg, String fechaLlamada, String tipoUltimaLlamada, int numMsg) {
+    public Contacto(ImageView imagen, String nombre, String estado, String ultMsg, String fechaMsg, String fechaLlamada, int numMsg) {
         this.imagen = imagen;
         this.nombre = nombre;
         this.estado = estado;
         this.ultMsg = ultMsg;
         this.fechaMsg = fechaMsg;
         this.fechaLlamada = fechaLlamada;
-        this.tipoUltimaLlamada = tipoUltimaLlamada;
         this.numMsg = numMsg;
     }
 
@@ -64,14 +63,6 @@ public class Contacto {
 
     public void setFechaLlamada(String fechaLlamada) {
         this.fechaLlamada = fechaLlamada;
-    }
-
-    public String getTipoUltimaLlamada() {
-        return tipoUltimaLlamada;
-    }
-
-    public void setTipoUltimaLlamada(String tipoUltimaLlamada) {
-        this.tipoUltimaLlamada = tipoUltimaLlamada;
     }
 
     public int getNumMsg() {

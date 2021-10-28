@@ -32,10 +32,6 @@ class AdaptadorLLamadas extends ArrayAdapter<Contacto> {
         nombre.setText(contactos[position].getNombre());
         TextView ultLlamada = (TextView)item.findViewById(R.id.estado01);
         ultLlamada.setText(contactos[position].getFechaLlamada());
-        ImageView tipoLlamada = (ImageView)item.findViewById(R.id.tipoLlamada);
-        if(contactos[position].getTipoUltimaLlamada() == "video" ){
-            tipoLlamada.setImageDrawable(Drawable.createFromPath("presence_video_online"));
-        }
         ImageView img = (ImageView)item.findViewById(R.id.img02);
         img.setImageDrawable(contactos[position].getImagen().getDrawable());
         return (item);
