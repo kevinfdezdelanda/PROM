@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.21927083333333333" />
         <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/chats.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/layout/contactos.xml" value="0.20520833333333333" />
@@ -12,11 +13,12 @@
         <entry key="..\:/Users/KevinF/AndroidStudioProjects/Whatsapp/app/src/main/res/menu/menu_main.xml" value="0.36666666666666664" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2767210144927536" />
         <entry key="app/src/main/res/layout/chats.xml" value="0.2767210144927536" />
-        <entry key="app/src/main/res/layout/contactos.xml" value="0.2767210144927536" />
+        <entry key="app/src/main/res/layout/contactos.xml" value="0.5577235772357724" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.2767210144927536" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.2767210144927536" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.2767210144927536" />
-        <entry key="app/src/main/res/layout/list_chats_layout.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/list_chats_layout.xml" value="0.3236514522821577" />
+        <entry key="app/src/main/res/layout/list_contactos_layout.xml" value="0.3651041666666667" />
         <entry key="app/src/main/res/layout/list_llamadas_layout.xml" value="0.75" />
         <entry key="app/src/main/res/layout/llamadas.xml" value="0.2767210144927536" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.3651041666666667" />

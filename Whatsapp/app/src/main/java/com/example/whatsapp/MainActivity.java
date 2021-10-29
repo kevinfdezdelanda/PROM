@@ -1,10 +1,13 @@
 package com.example.whatsapp;
 
+import android.content.ClipData;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private ListView listChats, listLlamadas, listContactos;
     private Contacto[] contactosArray;
+    private MenuItem item;
+    private int pestañaActual = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,14 +51,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        //Asignamos al ViewPager el PageAdapter
-        ViewPager viewPager = findViewById(R.id.viewpager);
-        viewPager.setAdapter(new PageAdaprter());
-        // Se asigna al TabLayout el ViewPager y configura el modo de las pestañas
-        TabLayout tabLayout= findViewById(R.id.tabLayout);
-        tabLayout.setTabMode(TabLayout.MODE_FIXED);
-        tabLayout.setupWithViewPager(viewPager);
 
         ImageView usu1Img = new ImageView(this);
         usu1Img.setImageResource(R.drawable.usu1);
@@ -77,16 +74,26 @@ public class MainActivity extends AppCompatActivity {
                 new Contacto(usu4Img, "Marcos", "asdasd", "KLK BRooooo", "Ayer", "07/06/2021",  2 ),
                 new Contacto(usu5Img, "Juanito Juan", "pagame", "pagame lo que me debes moroso ultimo aviso", "Hoy", "07/06/2021",  9 ),
         };
+
+        //Asignamos al ViewPager el PageAdapter
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        viewPager.setAdapter(new PageAdaprter());
+        // Se asigna al TabLayout el ViewPager y configura el modo de las pestañas
+        TabLayout tabLayout= findViewById(R.id.tabLayout);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    public void insertatListaChats(Contacto[] contactos){
-
+    public void cambiarIcono(int d){
+        item.setIcon(d);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        item = menu.findItem(R.id.otro);
+
         return true;
     }
 
@@ -111,26 +118,38 @@ public class MainActivity extends AppCompatActivity {
             View page;
             switch (position){
                 case 0:
+                    pestañaActual = 0;
+
                     if (chats == null){
                         chats = (LinearLayout)
                             LayoutInflater.from(MainActivity.this).inflate(R.layout.chats, container,false );
                     }
                     page = chats;
                     listChats = (ListView) chats.findViewById(R.id.listChats);
-
                     AdaptadorChats adaptadorChats =
                             new AdaptadorChats(chats.getContext(), contactosArray);
                     listChats.setAdapter(adaptadorChats);
+
                     break;
                 case 1:
+                    pestañaActual = 1;
+
                     if (contactos == null) {
                         contactos = (LinearLayout)
                                 LayoutInflater.from(MainActivity.this)
                                         .inflate(R.layout.contactos,container,false);
                     }
                     page=contactos;
+
+                    listContactos = (ListView) contactos.findViewById(R.id.listContactos);
+                    AdaptadorContactos adaptadorContactos =
+                            new AdaptadorContactos(contactos.getContext(), contactosArray);
+                    listContactos.setAdapter(adaptadorContactos);
+
                     break;
-                default:
+                case 2:
+                    pestañaActual = 2;
+
                     if (llamadas == null) {
                         llamadas = (LinearLayout)
                                 LayoutInflater.from(MainActivity.this)
@@ -142,9 +161,39 @@ public class MainActivity extends AppCompatActivity {
                     AdaptadorLLamadas adaptadorLLamadas =
                             new AdaptadorLLamadas(llamadas.getContext(), contactosArray);
                     listLlamadas.setAdapter(adaptadorLLamadas);
+
+                    break;
+                default:
+                    pestañaActual = 0;
+
+                    if (chats == null){
+                        chats = (LinearLayout)
+                                LayoutInflater.from(MainActivity.this).inflate(R.layout.chats, container,false );
+                    }
+                    page = chats;
+                    listChats = (ListView) chats.findViewById(R.id.listChats);
+                    AdaptadorChats adaptadorChats2 =
+                            new AdaptadorChats(chats.getContext(), contactosArray);
+                    listChats.setAdapter(adaptadorChats2);
+
                     break;
             }
             container.addView(page, 0);
+
+            if(item != null){
+                if(pestañaActual==0) {
+                    item.setIcon(android.R.drawable.sym_action_email);
+                }
+
+                if(pestañaActual==1) {
+                    item.setIcon(android.R.drawable.stat_notify_chat);
+                }
+
+                if(pestañaActual==2) {
+                    item.setIcon(android.R.drawable.stat_sys_phone_call);
+                }
+            }
+
             return page;
         }
 

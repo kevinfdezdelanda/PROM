@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lytContenedor"
     android:layout_width="match_parent"
@@ -8,9 +9,95 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView05"
+            android:layout_width="53dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="250dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgcont01"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TextView
+            android:id="@+id/txtCont1"
+            android:layout_width="275dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:text="Nuevo grupo"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView05"
+            app:layout_constraintStart_toEndOf="@+id/cardView05"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="32dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView06"
+            android:layout_width="53dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="250dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imgcont02"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars" />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+        <TextView
+            android:id="@+id/txtCont2"
+            android:layout_width="275dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:text="Nuevo contacto"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView06"
+            app:layout_constraintStart_toEndOf="@+id/cardView06"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ListView
+        android:id="@+id/listContactos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="contactos" />
+        android:layout_margin="15dp"
+        android:layout_marginStart="12dp"
+        tools:ignore="MissingConstraints" />
 </LinearLayout>

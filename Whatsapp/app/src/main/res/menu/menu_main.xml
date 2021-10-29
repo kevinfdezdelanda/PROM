@@ -1,11 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.whatsapp.MainActivity">
+    tools:context="com.example.whatsapp.MainActivity"
+    android:id="@+id/menu">
 
     <item
         android:id="@+id/action_buscar"
         android:icon="@android:drawable/ic_menu_search"
+        android:orderInCategory="100"
+        android:title="Buscar"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/otro"
+        android:icon="@android:drawable/sym_action_email"
         android:orderInCategory="100"
         android:title="Buscar"
         app:showAsAction="ifRoom" />
