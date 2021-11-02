@@ -21,6 +21,7 @@
             android:layout_width="53dp"
             android:layout_height="52dp"
             android:layout_gravity="center"
+            app:cardBackgroundColor="#078F64"
             app:cardCornerRadius="250dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -32,7 +33,7 @@
                 android:clickable="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@android:drawable/ic_menu_add" />
 
         </androidx.cardview.widget.CardView>
 
@@ -63,6 +64,7 @@
             android:layout_width="53dp"
             android:layout_height="52dp"
             android:layout_gravity="center"
+            app:cardBackgroundColor="#078F64"
             app:cardCornerRadius="250dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -72,9 +74,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clickable="false"
+                android:foregroundTint="#0327D3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
+                tools:srcCompat="@android:drawable/ic_menu_add" />
 
         </androidx.cardview.widget.CardView>
 

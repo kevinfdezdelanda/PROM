@@ -117,20 +117,7 @@ public class MainActivity extends AppCompatActivity {
         public Object instantiateItem(@NonNull ViewGroup container, int position) {
             View page;
             switch (position){
-                case 0:
-                    pestañaActual = 0;
 
-                    if (chats == null){
-                        chats = (LinearLayout)
-                            LayoutInflater.from(MainActivity.this).inflate(R.layout.chats, container,false );
-                    }
-                    page = chats;
-                    listChats = (ListView) chats.findViewById(R.id.listChats);
-                    AdaptadorChats adaptadorChats =
-                            new AdaptadorChats(chats.getContext(), contactosArray);
-                    listChats.setAdapter(adaptadorChats);
-
-                    break;
                 case 1:
                     pestañaActual = 1;
 
@@ -154,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                         llamadas = (LinearLayout)
                                 LayoutInflater.from(MainActivity.this)
                                         .inflate(R.layout.llamadas,container,false);
+
                     }
                     page=llamadas;
                     listLlamadas = (ListView) llamadas.findViewById(R.id.listLlamadas);
@@ -180,27 +168,26 @@ public class MainActivity extends AppCompatActivity {
             }
             container.addView(page, 0);
 
-            if(item != null){
-                if(pestañaActual==0) {
-                    item.setIcon(android.R.drawable.sym_action_email);
-                }
-
-                if(pestañaActual==1) {
-                    item.setIcon(android.R.drawable.stat_notify_chat);
-                }
-
-                if(pestañaActual==2) {
-                    item.setIcon(android.R.drawable.stat_sys_phone_call);
-                }
-            }
-
             return page;
         }
 
         @Override
         public boolean isViewFromObject(@NonNull View view,
                                         @NonNull Object object) {
-            //return false;
+            if(item!=null){
+                if(object.equals(chats)){
+                    item.setIcon(android.R.drawable.sym_action_email);
+                }
+
+                if(object.equals(contactos)){
+                    item.setIcon(android.R.drawable.stat_notify_chat);
+                }
+
+                if(object.equals(llamadas)){
+                    item.setIcon(android.R.drawable.arrow_down_float);
+                }
+            }
+
             return view == object;
         }
         @Override
