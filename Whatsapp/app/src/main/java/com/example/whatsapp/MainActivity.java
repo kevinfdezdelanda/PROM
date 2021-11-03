@@ -84,10 +84,6 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
     }
 
-    public void cambiarIcono(int d){
-        item.setIcon(d);
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -168,26 +164,26 @@ public class MainActivity extends AppCompatActivity {
             }
             container.addView(page, 0);
 
+            if(item!=null){
+                if(position == 0){
+                    item.setIcon(android.R.drawable.sym_action_email);
+                }
+
+                if(position == 1){
+                    item.setIcon(android.R.drawable.stat_notify_chat);
+                }
+
+                if(position == 2){
+                    item.setIcon(android.R.drawable.arrow_down_float);
+                }
+            }
+
             return page;
         }
 
         @Override
         public boolean isViewFromObject(@NonNull View view,
                                         @NonNull Object object) {
-            if(item!=null){
-                if(object.equals(chats)){
-                    item.setIcon(android.R.drawable.sym_action_email);
-                }
-
-                if(object.equals(contactos)){
-                    item.setIcon(android.R.drawable.stat_notify_chat);
-                }
-
-                if(object.equals(llamadas)){
-                    item.setIcon(android.R.drawable.arrow_down_float);
-                }
-            }
-
             return view == object;
         }
         @Override
@@ -195,5 +191,7 @@ public class MainActivity extends AppCompatActivity {
                                 int position, @NonNull Object object) {
             container.removeView((View)object);
         }
+
+
     }
 }
