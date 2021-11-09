@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity {
                 NotificationCompat.Builder notificacion =
                         new NotificationCompat.Builder(MainActivity.this,CANAL_ID)
                                 .setSmallIcon(R.drawable.ic_launcher_foreground)
-                                .setContentTitle("Muy Bien")
-                                .setContentText("has acertado 10 preguntas");
+                                .setContentTitle("\uD83D\uDD25\uD83D\uDD25\uD83D\uDD25Muy Bien\uD83D\uDD25\uD83D\uDD25\uD83D\uDD25")
+                                .setContentText("has acertado \uD83D\uDD25\uD83D\uDD25\uD83D\uDD25 10 \uD83D\uDD25\uD83D\uDD25\uD83D\uDD25 preguntas");
                 notificationManager.notify(NOTIFICACION_ID, notificacion.build());
             }
         }
