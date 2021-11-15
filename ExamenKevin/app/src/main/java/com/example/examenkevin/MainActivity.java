@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
 
     @Override
     public void onPossitiveButtonClick(String usu, String pass) {
-        /*if(usu.equals("usuario") && pass.equals("123456")){
+        if(usu.equals("usuario") && pass.equals("123456")){
             Toast.makeText(this, "Login correcto",
                     Toast.LENGTH_SHORT).show();
         }else{
@@ -61,9 +61,7 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
             FragmentManager fragmentManager= getSupportFragmentManager();
             DialogoAlerta dialogoAlerta = new DialogoAlerta("Usuario y/o Contraseña incorrecos. La aplicacion se cerrara");
             dialogoAlerta.show(fragmentManager,"tagAlerta");
-        }*/
-        Toast.makeText(this, "Login correcto",
-                    Toast.LENGTH_SHORT).show();
+        }
     }
     @Override
     public void onNegativeButtonClick() {
