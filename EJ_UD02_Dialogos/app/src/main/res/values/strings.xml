@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">EJ_UD02_Dialogos</string>
+    <string name="app_name">DÖNER KEBAB</string>
+
+    <string name="tab1">Menu</string>
+    <string name="tab2">Pedido</string>
+
 </resources>

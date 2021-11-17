@@ -1,16 +1,28 @@
 package com.example.ej_ud02_dialogos;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDialogoConfirmacionListener{
+import com.google.android.material.tabs.TabLayout;
+
+public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDialogoConfirmacionListener, KebabsListener {
 
     private boolean sesionIniciada;
 
@@ -22,6 +34,33 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
         mostrarLogin();
 
         setContentView(R.layout.activity_main);
+
+        FragmentListado fragmentListado =
+                (FragmentListado) getSupportFragmentManager().
+                        findFragmentById(R.id.frgListado);
+        //fragmentListado.setKebabListener(this);
+
+        //Asignamos al ViewPager el PageAdapter
+        ViewPager viewPager = findViewById(R.id.viewpager);
+        viewPager.setAdapter(new PageAdaprter());
+        // Se asigna al TabLayout el ViewPager y configura el modo de las pestañas
+        TabLayout tabLayout = findViewById(R.id.tabLayout);
+        tabLayout.setTabMode(TabLayout.MODE_FIXED);
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    public void onKebabSeleccionado(Kebab k) {
+        boolean hayDetalle =
+                (getSupportFragmentManager().findFragmentById(R.id.frgDetalle) != null);
+        if (hayDetalle) {
+            ((FragmentDetalle) getSupportFragmentManager().
+                    findFragmentById(R.id.frgDetalle)).mostrarDetalle(k.getIngredientes());
+        } else {
+            Intent i = new Intent(this, DetalleActivity.class);
+            i.putExtra(DetalleActivity.EXTRA_TEXTO, k.getIngredientes());
+            startActivity(i);
+        }
     }
 
     @Override
@@ -32,17 +71,17 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
         return true;
     }
 
-    public void mostrarLogin(){
-        if(!sesionIniciada){
-            FragmentManager fragmentManager= getSupportFragmentManager();
+    public void mostrarLogin() {
+        if (!sesionIniciada) {
+            FragmentManager fragmentManager = getSupportFragmentManager();
             DialogoLogin dialogoLogin = new DialogoLogin();
-            dialogoLogin.show(fragmentManager,"tagAlerta");
+            dialogoLogin.show(fragmentManager, "tagAlerta");
         }
     }
 
     @Override
     public void onPossitiveButtonClick(String usu, String pass) {
-        if(usu.equals("usuario1") && pass.equals("123456")){
+        /*if(usu.equals("usuario1") && pass.equals("123456")){
             Toast.makeText(this, "Login correcto",
                     Toast.LENGTH_SHORT).show();
             sesionIniciada = true;
@@ -51,9 +90,13 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
                     Toast.LENGTH_SHORT).show();
             mostrarLogin();
             sesionIniciada = false;
-        }
+        }*/
+        Toast.makeText(this, "Login correcto",
+                Toast.LENGTH_SHORT).show();
+        sesionIniciada = true;
 
     }
+
     @Override
     public void onNegativeButtonClick() {
         Toast.makeText(this, "Botón Negativo pulsado",
@@ -75,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
                 .setIcon(R.drawable.ic_launcher_background)
                 .setTitle("¿Realmente desea cerrar la aplicación?")
                 .setCancelable(false)
-                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener(){
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         mostrarLogin();
@@ -88,5 +131,60 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
                         //finish(); Si solo quiere mandar la aplicación a segundo plano
                     }
                 }).show();
+    }
+
+    class PageAdaprter extends PagerAdapter {
+        private LinearLayout menu;
+        private LinearLayout pedido;
+
+        private final int[] pestanas = {R.string.tab1, R.string.tab2};
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Nullable
+        @Override
+        public CharSequence getPageTitle(int position) {
+            String s = getString(pestanas[position]);
+            return s;
+        }
+
+        @NonNull
+        @Override
+        public Object instantiateItem(@NonNull ViewGroup container, int position) {
+            View page;
+            switch (position) {
+
+                case 1:
+
+
+
+                default:
+                    if (menu == null) {
+                        menu = (LinearLayout)
+                                LayoutInflater.from(MainActivity.this)
+                                        .inflate(R.layout.menu, container, false);
+                    }
+                    page = menu;
+
+                    break;
+            }
+            container.addView(page, 0);
+
+            return page;
+        }
+
+        @Override
+        public boolean isViewFromObject(@NonNull View view,
+                                        @NonNull Object object) {
+            return view == object;
+        }
+        @Override
+        public void destroyItem(@NonNull ViewGroup container,
+                                int position, @NonNull Object object) {
+            container.removeView((View)object);
+        }
     }
 }

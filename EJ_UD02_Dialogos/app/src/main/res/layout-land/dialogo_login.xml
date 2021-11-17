@@ -30,7 +30,7 @@
     <EditText
         android:id="@+id/usu"
         android:layout_width="233dp"
-        android:layout_height="41dp"
+        android:layout_height="48dp"
         android:layout_marginStart="48dp"
         android:ems="10"
         android:hint="Usuario"
@@ -54,7 +54,7 @@
     <EditText
         android:id="@+id/pass"
         android:layout_width="239dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:ems="10"
         android:hint="Contraseña"

@@ -4,7 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout-land/dialogo_login.xml" value="0.21822916666666667" />
+        <entry key="app/src/main/res/layout/activity_detalle.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.20416666666666666" />
         <entry key="app/src/main/res/layout/dialogo_login.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/fragment_detalle.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/layout/fragment_listado.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/listitem_kebab.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/listitem_pelicula.xml" value="0.3651041666666667" />
+        <entry key="app/src/main/res/layout/menu.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.3651041666666667" />
       </map>
     </option>
   </component>
