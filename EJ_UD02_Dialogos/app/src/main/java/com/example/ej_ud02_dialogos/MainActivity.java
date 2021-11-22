@@ -82,19 +82,16 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
 
     @Override
     public void onPossitiveButtonClick(String usu, String pass) {
-        /*if(usu.equals("usuario1") && pass.equals("123456")){
+        if(usu.equals("usuario1") && pass.equals("123456")){
             Toast.makeText(this, "Login correcto",
                     Toast.LENGTH_SHORT).show();
             sesionIniciada = true;
-        }else{
+        }else {
             Toast.makeText(this, "Login incorrecto",
                     Toast.LENGTH_SHORT).show();
             mostrarLogin();
             sesionIniciada = false;
-        }*/
-        Toast.makeText(this, "Login correcto",
-                Toast.LENGTH_SHORT).show();
-        sesionIniciada = true;
+        }
 
     }
 
