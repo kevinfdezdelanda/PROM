@@ -19,10 +19,10 @@ import androidx.fragment.app.Fragment;
 public class FragmentListado extends Fragment {
 
     private Kebab[] datos = new Kebab [] {
-            new Kebab ("PanPita", "Carner, ensalada, salsa, pan pita", R.drawable.pan_pita),
-            new Kebab ("Durum", "Carner, ensalada, salsa, wrap", R.drawable.durum),
-            new Kebab ("Plato Carne", "carne, salsa, ensalada", R.drawable.plato_carne),
-            new Kebab ("Patatas", "patatas, salsa", R.drawable.patatas)};
+            new Kebab ("PanPita", "Carner, ensalada, salsa, pan pita", R.drawable.pan_pita, 3.5),
+            new Kebab ("Durum", "Carner, ensalada, salsa, wrap", R.drawable.durum, 4.5),
+            new Kebab ("Plato Carne", "carne, salsa, ensalada", R.drawable.plato_carne, 3.5),
+            new Kebab ("Patatas", "patatas, salsa", R.drawable.patatas, 2)};
 
     private ListView lstListado;
 
@@ -69,6 +69,8 @@ public class FragmentListado extends Fragment {
             nombreKebab.setText(datos[position].getNombre());
             ImageView img = (ImageView) item.findViewById(R.id.img);
             img.setImageResource(datos[position].getImg());
+            TextView precioKebab = (TextView) item.findViewById(R.id.precio);
+            precioKebab.setText(datos[position].getPrecio()+"");
             return (item);
         }
     }

@@ -4,12 +4,14 @@ import android.graphics.drawable.Drawable;
 
 public class Kebab {
     private String nombre, ingredientes;
+    private double precio;
     private int img;
 
-    public Kebab(String nombre, String ingredientes, int img) {
+    public Kebab(String nombre, String ingredientes, int img, double precio) {
         this.nombre = nombre;
         this.ingredientes = ingredientes;
         this.img = img;
+        this.precio = precio;
     }
 
     public String getNombre() {
@@ -34,5 +36,13 @@ public class Kebab {
 
     public void setImg(int img) {
         this.img = img;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 }

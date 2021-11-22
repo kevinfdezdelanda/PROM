@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
@@ -133,9 +134,14 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
                 }).show();
     }
 
+    public void pedir(View v){
+        Intent intent = new Intent(MainActivity.this, PedirKebab.class);
+        startActivity(intent);
+    }
+
     class PageAdaprter extends PagerAdapter {
         private LinearLayout menu;
-        private LinearLayout pedido;
+        private ConstraintLayout pedido;
 
         private final int[] pestanas = {R.string.tab1, R.string.tab2};
 
@@ -158,14 +164,28 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
             switch (position) {
 
                 case 1:
+                    if (pedido == null) {
+                        PedirKebab pedirKebab = new PedirKebab();
+                        pedido = (ConstraintLayout)
+                                LayoutInflater.from(MainActivity.this)
+                                        .inflate(R.layout.pedido, container, false);
 
+                    }
+                    page = pedido;
 
+                    break;
 
                 default:
                     if (menu == null) {
+
                         menu = (LinearLayout)
                                 LayoutInflater.from(MainActivity.this)
                                         .inflate(R.layout.menu, container, false);
+
+                        FragmentListado fragmentListado =
+                                (FragmentListado)getSupportFragmentManager().
+                                        findFragmentById(R.id.frgListado);
+                        fragmentListado.setKebabListener(MainActivity.this);
                     }
                     page = menu;
 
@@ -187,4 +207,6 @@ public class MainActivity extends AppCompatActivity implements DialogoLogin.OnDi
             container.removeView((View)object);
         }
     }
+
+
 }
