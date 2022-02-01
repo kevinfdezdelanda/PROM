@@ -25,6 +25,12 @@
         <activity
             android:name=".Ej1">
         </activity>
+        <activity
+            android:name=".EJ2">
+        </activity>
+        <activity
+            android:name=".EJ3">
+        </activity>
     </application>
 
 </manifest>

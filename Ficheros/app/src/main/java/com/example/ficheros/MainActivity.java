@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
         ej2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, EJ2.class);
+                startActivity(intent);
             }
         });
 
@@ -35,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         ej3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, EJ3.class);
+                startActivity(intent);
             }
         });
     }
