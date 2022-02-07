@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">examen2</string>
+    <string name="ej1">Ej1 BBDD</string>
+    <string name="ej1_1">Crear/Modificar clientes</string>
+    <string name="crearCli">Crear nuevo Cliente</string>
+    <string name="ej1_2">Crear Facturas</string>
+    <string name="ej1_3">Consultar Facturas</string>
+    <string name="ej2">Ej2 XML</string>
+    <string name="salir">SALIR</string>
+    <string name="adios">adios!!!!</string>
+    <string name="dni">dni</string>
+    <string name="nombre">nombre</string>
+    <string name="direccion">direccion</string>
+    <string name="telefono">telefono</string>
+    <string name="Guardar_Cliente">Guardar Cliente</string>MODIFICAR CLIENTE
+    <string name="concepto">concepto</string>
+    <string name="valor">valor</string>
+    <string name="Crear_factura">Crear factura</string>
+    <string name="MODIFICAR_CLIENTE">MODIFICAR CLIENTE</string>
+    <string name="Ver_Facturas">Ver Facturas</string>
+    <string name="num_fac">Num Fac:</string>
+    <string name="cliente">Cliente:</string>
+    <string name="EL_TIEMPO">EL TIEMPO</string>
+    <string name="escoge">Escoge una de las localidades</string>
+    <string name="Tiempo_en">Tiempo en:</string>
+    <string name="FECHA_HORA">FECHA / HORA:</string>
+    <string name="TEMPERATURA">TEMPERATURA:</string>
+    <string name="alerta1">Rellena todos los campos</string>
+    <string name="alerta2">Error al crear la factura</string>
+    <string name="alerta3">Factura Creada</string>
+</resources>
